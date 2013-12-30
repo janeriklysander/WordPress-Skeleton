@@ -1,0 +1,181 @@
+///////////
+// Forms //
+///////////
+
+
+////////////////////
+// GENERAL STYLES //
+////////////////////
+
+// Make all forms have space below them
+form {
+  margin: @formMargin;
+}
+
+// Set font for forms
+input,
+button,
+select,
+textarea {
+  font-family: @formFontFamily; // And only set font-family here for those that need it (note the missing label element)
+}
+
+// Identify controls by their labels
+label {
+  display: block;
+  margin-bottom: @labelMarginBottom;
+  &.inline {
+    display: inline
+  }
+}
+
+// Form controls
+// -------------------------
+
+// Shared size and type resets
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  .border-radius(@inputBorderRadius);
+  .font-size(@inputFontSize);
+  .line-height(@inputLineHeight);
+  display: @inputDisplay;
+  height: @inputHeight;
+  color: @inputTextColor;
+  vertical-align: middle;
+  padding-top: @inputPaddingTop;
+  padding-right: @inputPaddingRight;
+  padding-bottom: @inputPaddingBottom;
+  padding-left: @inputPaddingLeft;
+}
+
+// Reset height since textareas have rows
+textarea {
+  height: auto;
+}
+
+// Everything else
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  background-color: @inputBackground;
+  border-color: @inputBorderColor;
+  border-style: solid;
+  border-width: @inputBorderWidth;
+  .box-shadow(@inputBoxShadow);
+  .transition(@inputTransition);
+
+  // Focus state
+  &:focus {
+    border-color: @inputFocusBorderColor;
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    .box-shadow(@inputFocusBoxShadow);
+  }
+}
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  *margin-top: 0; /* IE7 */
+  margin-top: 1px \9; /* IE8-9 */
+  line-height: normal;
+}
+
+// Reset width of input images, buttons, radios, checkboxes
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto; // Override of generic input selector
+}
+
+// Set the height of select and file controls to match text inputs
+select,
+input[type="file"] {
+  height: @inputHeight; /* In IE7, the height of the select element cannot be changed by height, only font-size */
+  *margin-top: 4px; /* For IE7, add top margin to align select with labels */
+  .line-height(@inputLineHeight);
+}
+
+// Make select elements obey height by applying a border
+select {
+  width: 220px; // default input width + 10px of padding that doesn't get applied
+  border-color: @inputBorderColor;
+  border-style: solid;
+  border-width: @inputBorderWidth;
+  background-color: @inputBackground; // Chrome on Linux and Mobile Safari need background-color
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+/////////////////
+// INPUT SIZES //
+/////////////////
+
+// General classes for quick sizes
+input.mini       { width: 60px; }
+input.small      { width: 90px; }
+input.medium     { width: 150px; }
+input.large      { width: 210px; }
+input.xlarge     { width: 270px; }
+input.xxlarge    { width: 530px; }
+input.auto       { width: auto; }
+
+
+////////////////////
+// DISABLED STATE //
+////////////////////
+
+// Disabled and read-only inputs
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  cursor: not-allowed;
+  background-color: @inputDisabledBackground;
+}
+// Explicitly reset the colors here
+input[type="radio"][disabled],
+input[type="checkbox"][disabled],
+input[type="radio"][readonly],
+input[type="checkbox"][readonly] {
+  background-color: transparent;
+}

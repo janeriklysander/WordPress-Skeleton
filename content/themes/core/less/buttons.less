@@ -1,0 +1,131 @@
+.button,
+.btn {
+	display: @buttonDisplay;
+	height: @buttonHeight;
+	padding: @buttonPadding;
+	margin-bottom: @buttonMargin;
+	.font-size(@buttonFontSize);
+	.line-height(@buttonLineHeight);
+	text-align: @buttonTextAlign;
+	vertical-align: @buttonVerticalAlign;
+	cursor: @buttonCursor;
+	border-color: @buttonBorderColor;
+	border-style: @buttonBorderStyle;
+	border-width: @buttonBorderWidth;
+	*border: 0; // Remove the border to prevent IE7's black border on input:focus
+	.border-radius(@buttonBorderRadius);
+	.box-shadow(@buttonBoxShadow);
+	.gradient(@buttonBackground, @buttonGradientStart, @buttonGradientEnd);
+	color: @buttonTextColor;
+	text-decoration: @buttonTextDecoration;
+	text-transform: @buttonTextTransform;
+	.box-sizing(border-box);
+	// Hover/focus state
+	&:hover,
+	&:focus,
+	&.selected,
+	.selected & {
+		color: @buttonHoverTextColor;
+		text-decoration: @buttonTextDecoration;
+		.gradient(@buttonHoverBackground, @buttonHoverGradientStart, @buttonHoverGradientEnd);
+		.box-shadow(@buttonHoverBoxShadow);
+	}
+
+	// Active state
+	&.active,
+	&:active {
+		.box-shadow(@buttonActiveBoxShadow);
+	}
+
+	// Disabled state
+	&.disabled,
+	&[disabled] {
+		cursor: default;
+		.opacity(65);
+		.box-shadow(none);
+	}
+
+	&.primary {
+		height: @buttonPrimaryHeight;
+		padding: @buttonPrimaryPadding;
+		margin-bottom: @buttonPrimaryMargin;
+		.font-size(@buttonPrimaryFontSize);
+		.line-height(@buttonPrimaryLineHeight);
+		border-color: @buttonPrimaryBorderColor;
+		border-style: @buttonPrimaryBorderStyle;
+		border-width: @buttonPrimaryBorderWidth;
+		*border: 0; // Remove the border to prevent IE7's black border on input:focus
+		.border-radius(@buttonPrimaryBorderRadius);
+		.box-shadow(@buttonPrimaryBoxShadow);
+		.gradient(@buttonPrimaryBackground, @buttonPrimaryGradientStart, @buttonPrimaryGradientEnd);
+		color: @buttonPrimaryTextColor;
+		text-decoration: @buttonPrimaryTextDecoration;
+		text-transform: @buttonPrimaryTextTransform;
+		// Hover/focus state
+		&:hover,
+		&:focus,
+		&.selected,
+		.selected & {
+			color: @buttonPrimaryHoverTextColor;
+			text-decoration: @buttonPrimaryTextDecoration;
+			.gradient(@buttonPrimaryHoverBackground, @buttonPrimaryHoverGradientStart, @buttonPrimaryHoverGradientEnd);
+			.box-shadow(@buttonPrimaryHoverBoxShadow);
+		}
+
+		// Active state
+		&.active,
+		&:active {
+			.box-shadow(@buttonPrimaryActiveBoxShadow);
+		}
+
+		// Disabled state
+		&.disabled,
+		&[disabled] {
+			cursor: default;
+			.opacity(65);
+			.box-shadow(none);
+		}
+	}
+
+	&.secondary {
+		height: @buttonSecondaryHeight;
+		padding: @buttonSecondaryPadding;
+		margin-bottom: @buttonSecondaryMargin;
+		.font-size(@buttonSecondaryFontSize);
+		.line-height(@buttonSecondaryLineHeight);
+		border-color: @buttonSecondaryBorderColor;
+		border-style: @buttonSecondaryBorderStyle;
+		border-width: @buttonSecondaryBorderWidth;
+		*border: 0; // Remove the border to prevent IE7's black border on input:focus
+		.border-radius(@buttonSecondaryBorderRadius);
+		.box-shadow(@buttonSecondaryBoxShadow);
+		.gradient(@buttonSecondaryBackground, @buttonSecondaryGradientStart, @buttonSecondaryGradientEnd);
+		color: @buttonSecondaryTextColor;
+		text-decoration: @buttonSecondaryTextDecoration;
+		text-transform: @buttonSecondaryTextTransform;
+		// Hover/focus state
+		&:hover,
+		&:focus,
+		&.selected,
+		.selected & {
+			color: @buttonSecondaryHoverTextColor;
+			text-decoration: @buttonSecondaryTextDecoration;
+			.gradient(@buttonSecondaryHoverBackground, @buttonSecondaryHoverGradientStart, @buttonSecondaryHoverGradientEnd);
+			.box-shadow(@buttonSecondaryHoverBoxShadow);
+		}
+
+		// Active state
+		&.active,
+		&:active {
+			.box-shadow(@buttonSecondaryActiveBoxShadow);
+		}
+
+		// Disabled state
+		&.disabled,
+		&[disabled] {
+			cursor: default;
+			.opacity(65);
+			.box-shadow(none);
+		}
+	}
+}

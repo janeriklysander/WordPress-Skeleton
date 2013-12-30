@@ -1,0 +1,62 @@
+/////////////
+// Alerts  //
+/////////////
+
+
+/////////////////
+// Base styles //
+/////////////////
+
+.alert, .errorMessage {
+    padding: @alertPadding;
+    margin-bottom: @alertLineHeight;
+    text-shadow: @alertTextShadow;
+    background-color: @warningBackground;
+    border: @warningBorder;
+    .border-radius(@alertBorderRadius);
+    // Adjust close link position
+    .close {
+        position: relative;
+        top: @alertCloseTop;
+        right: @alertCloseRight;
+        line-height: @alertLineHeight;
+    }
+    
+    //////////////////////
+    // Alternate styles //
+    //////////////////////
+    &.success {
+        background-color: @successBackground;
+        border-color: @successBorder;
+        color: @successText;
+    }
+    &.success h1 {
+        color: @successText;
+    }
+    &.danger,
+    &.error {
+        background-color: @errorBackground;
+        border-color: @errorBorder;
+        color: @errorText;
+    }
+    &.danger h1,
+    &.error h1 {
+        color: @errorText;
+    }
+    &.info {
+        background-color: @infoBackground;
+        border-color: @infoBorder;
+        color: @infoText;
+    }
+    &.info h1 {
+        color: @infoText;
+    }
+}
+.alert,
+.alert h1 {
+    // Specified for the h1 to prevent conflicts of changing @headingsColor
+    color: @warningText;
+}
+.alert h1 {
+    margin: @alertHeaderMargin;
+}
