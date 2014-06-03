@@ -7,10 +7,14 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php wp_title(); ?></title>
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/css/main.css" />
-<?php wp_head(); ?>
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"> -->
+    <title><?php wp_title(); ?></title>
+    <?php 
+    wp_enqueue_style('site.css');
+    wp_enqueue_script('site.js');
+    wp_head(); 
+    ?>
 </head>
 
 <body <?php body_class(); ?>>

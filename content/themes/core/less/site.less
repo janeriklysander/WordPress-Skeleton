@@ -1,0 +1,157 @@
+/////////////
+// Imports //
+/////////////
+
+@import "../lessmore/lessmore.less";
+@import "../lessmore/variables.less";
+@import "variables.less";
+@import "../lessmore/bootstrap.less";
+
+//////////
+// Base //
+//////////
+
+html {
+    font-size: 62.5%;
+    body {
+        background-color: @backgroundColor;
+        color: @textColor;
+        font-family: @fontFamily;
+    }
+}
+
+///////////////////
+// Basic styling //
+///////////////////
+
+.header {
+    color: @headerColor;
+    font-family: @headerFontFamily;
+    font-weight: @headerFontWeight;
+    text-decoration: @headerTextDecoration;
+    text-transform: @headerTextTransform;
+}
+
+
+h1 {
+    &:extend(.header);
+    .font-size(@headerFontSize);
+    .line-height(@headerLineHeight);
+}
+
+h2 {
+    &:extend(.header);
+    .font-size((@headerFontSize - .2));
+    .line-height((@headerLineHeight - .2));
+}
+
+h3 {
+    &:extend(.header);
+    .font-size((@headerFontSize - .3));
+    .line-height((@headerLineHeight - .3));
+}
+
+a {
+    color: @linkColor;
+    text-decoration: @linkTextDecoration;
+    &:hover {
+        color: @linkHoverColor;
+    }
+    &.no-decoration {
+        text-decoration: none;
+    }
+}
+
+.cycle-slideshow {
+    > figure {
+        position: relative;
+        width: 100%;
+        &:not(:first-child) {
+            display: none;
+        }
+    }
+    img {
+        display: block;
+    }
+    .pager {
+        position: absolute;
+        z-index: 1000;
+        width: auto;
+        > * {
+            cursor: pointer;
+        }
+    }
+}
+
+img,
+iframe {
+    max-width: 100%;
+}
+
+figure {
+    > a,
+    > a > img,
+    > img {
+        display: block;
+    }
+}
+
+ul.list,
+ul.grid,
+ul.pager {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        position: relative;
+    }
+}
+
+///////////////////
+// Common layout //
+///////////////////
+
+.columns(@gridColumns, @gridGutter, @gridPadding);
+
+#page {
+    .font-size(@fontSize);
+    .line-height(@lineHeight);
+    > header > .wrapper,
+    > div[role="main"] > .wrapper,
+    > footer > .wrapper {
+        width: @pageWidth;
+        max-width: @pageMaxWidth;
+        margin: 0 auto;
+    }
+}
+
+////////////
+// Header //
+////////////
+
+ #page > header {
+
+ }
+
+//////////////////////
+// Mainmenu styling //
+//////////////////////
+#mainmenu {
+    
+}
+
+/////////////
+// Content //
+/////////////
+
+#page > div[role="main"] {
+
+}
+
+////////////
+// Footer //
+////////////
+
+#page > footer {
+    
+}
