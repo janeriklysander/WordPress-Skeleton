@@ -5,6 +5,8 @@
  *
  * This code allows the theme to work without errors if the Options Framework plugin has been disabled.
  */
+$root_dir = realpath(dirname(__FILE__).'/../../../');
+
 if (!function_exists('of_get_option')) {
     function of_get_option($name, $default = false) {
         $optionsframework_settings = get_option('optionsframework');
@@ -20,6 +22,9 @@ if (!function_exists('of_get_option')) {
         }
     }
 }
+
+// Create uploads directory if it doesn't exist
+mkdir($root_dir.'/shared/content/uploads', 0777, true);
 
 // Register site JS
 wp_register_script('site.js', get_template_directory_uri() . '/js/site.js', array('jquery'));
