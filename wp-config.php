@@ -11,6 +11,25 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 	define( 'DB_USER', '%%DB_USER%%' );
 	define( 'DB_PASSWORD', '%%DB_PASSWORD%%' );
 	define( 'DB_HOST', '%%DB_HOST%%' ); // Probably 'localhost'
+    
+    // ==============================================================
+    // Salts, for security
+    // Grab these from: https://api.wordpress.org/secret-key/1.1/salt
+    // ==============================================================
+    define( 'AUTH_KEY',         'put your unique phrase here' );
+    define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
+    define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
+    define( 'NONCE_KEY',        'put your unique phrase here' );
+    define( 'AUTH_SALT',        'put your unique phrase here' );
+    define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
+    define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
+    define( 'NONCE_SALT',       'put your unique phrase here' );
+
+    // ==============================================================
+    // Table prefix
+    // Change this if you have multiple installs in the same database
+    // ==============================================================
+    $table_prefix  = 'wp_';
 }
 
 // ========================
@@ -24,25 +43,6 @@ define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
 // ================================================
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
-
-// ==============================================================
-// Salts, for security
-// Grab these from: https://api.wordpress.org/secret-key/1.1/salt
-// ==============================================================
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
-
-// ==============================================================
-// Table prefix
-// Change this if you have multiple installs in the same database
-// ==============================================================
-$table_prefix  = 'wp_';
 
 // ================================
 // Language
@@ -72,8 +72,11 @@ if ( file_exists( dirname( __FILE__ ) . '/memcached.php' ) )
 // ===========================================================================================
 // This can be used to programatically set the stage when deploying (e.g. production, staging)
 // ===========================================================================================
-define( 'WP_STAGE', '%%WP_STAGE%%' );
-define( 'STAGING_DOMAIN', '%%WP_STAGING_DOMAIN%%' ); // Does magic in WP Stack to handle staging domain rewriting
+// define( 'WP_STAGE', '%%WP_STAGE%%' );
+// define( 'STAGING_DOMAIN', '%%WP_STAGING_DOMAIN%%' ); // Does magic in WP Stack to handle staging domain rewriting
+
+define('WP_HOME','http://' . $_SERVER['HTTP_HOST']);
+define('WP_SITEURL','http://' . $_SERVER['HTTP_HOST'] . '/wp');
 
 // ===================
 // Bootstrap WordPress

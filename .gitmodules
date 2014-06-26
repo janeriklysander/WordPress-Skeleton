@@ -4,3 +4,6 @@
 [submodule "content/themes/core/lessmore"]
 	path = content/themes/core/lessmore
 	url = https://github.com/janeriklysander/lessmore.git
+[submodule "content/plugins/meta-box"]
+	path = content/plugins/meta-box
+	url = https://github.com/rilwis/meta-box.git

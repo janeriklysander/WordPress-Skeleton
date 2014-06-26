@@ -42,7 +42,7 @@ function optionsframework_options() {
 
 	// Pull all the pages into an array
 	$pages = array();
-	$pages[''] = __('Select a page:', 'options_framework_theme');
+	$pages[''] = __('Select a page:', 'site');
 	foreach (get_pages('sort_column=post_parent,menu_order') as $page) {
 		$pages[$page->ID] = $page->post_title;
 	}
@@ -52,12 +52,12 @@ function optionsframework_options() {
 
 	$options = array(
 		array(
-			'name' => __('Basic Settings', 'options_framework_theme'),
+			'name' => __('Basic Settings', 'site'),
 			'type' => 'heading'
 		),
 		array(
-			'name' => __('Google Analytics tracking code', 'options_framework_theme'),
-			'desc' => __('A mini text input field.', 'options_framework_theme'),
+			'name' => __('Google Analytics tracking code', 'site'),
+			'desc' => __('A mini text input field.', 'site'),
 			'id' => 'google_analytics',
 			'std' => '',
 			'type' => 'textarea'
