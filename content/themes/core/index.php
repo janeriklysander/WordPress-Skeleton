@@ -10,6 +10,9 @@
 
 get_header();
 
-get_template_part('content/page');
+while(have_posts()) { 
+    the_post();
+    get_template_part('content/page');
+}
 
 get_footer();
