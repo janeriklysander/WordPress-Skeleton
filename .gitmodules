@@ -1,8 +1,8 @@
 [submodule "wp"]
 	path = wp
 	url = git://github.com/WordPress/WordPress.git
-[submodule "content/themes/core/lessmore"]
-	path = content/themes/core/lessmore
+[submodule "content/themes/core/vendor/lessmore"]
+	path = content/themes/core/vendor/lessmore
 	url = https://github.com/janeriklysander/lessmore.git
 [submodule "content/plugins/meta-box"]
 	path = content/plugins/meta-box

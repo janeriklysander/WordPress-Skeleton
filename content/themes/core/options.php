@@ -28,27 +28,27 @@ function optionsframework_option_name() {
 function optionsframework_options() {
 
 	// Pull all the categories into an array
-	$categories = array();
-	foreach (get_categories() as $category) {
-		$categories[$category->cat_ID] = $category->cat_name;
-	}
+	// $categories = array();
+	// foreach (get_categories() as $category) {
+	// 	$categories[$category->cat_ID] = $category->cat_name;
+	// }
 
 	// Pull all tags into an array
-	$tags = array();
-	foreach (get_tags() as $tag ) {
-		$tags[$tag->term_id] = $tag->name;
-	}
+	// $tags = array();
+	// foreach (get_tags() as $tag ) {
+	// 	$tags[$tag->term_id] = $tag->name;
+	// }
 
 
 	// Pull all the pages into an array
-	$pages = array();
-	$pages[''] = __('Select a page:', 'site');
-	foreach (get_pages('sort_column=post_parent,menu_order') as $page) {
-		$pages[$page->ID] = $page->post_title;
-	}
+	// $pages = array();
+	// $pages[''] = __('Select a page:', 'site');
+	// foreach (get_pages('sort_column=post_parent,menu_order') as $page) {
+	// 	$pages[$page->ID] = $page->post_title;
+	// }
 
 	// If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . '/images/';
+	// $imagepath =  get_template_directory_uri() . '/images/';
 
 	$options = array(
 		array(
@@ -56,11 +56,11 @@ function optionsframework_options() {
 			'type' => 'heading'
 		),
 		array(
-			'name' => __('Google Analytics tracking code', 'site'),
-			'desc' => __('A mini text input field.', 'site'),
+			'name' => __('Google Analytics tracking ID', 'site'),
+			'desc' => __('Looks something like UA-1234567-1', 'site'),
 			'id' => 'google_analytics',
 			'std' => '',
-			'type' => 'textarea'
+			'type' => 'text'
 		),
 	);
 
